@@ -1,0 +1,17 @@
+
+server:
+  port: 8085
+
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8082/realms/bankrupt
+          jwk-set-uri: ${spring.security.oauth2.resourceserver.jwt.issuer-uri}/protocol/openid-connect/certs
+
+jwt:
+  auth:
+    converter:
+      resource-id: ${KEY_CLOAK_RESOURCE:backend-api}
+      principal-attribute: preferred_username
