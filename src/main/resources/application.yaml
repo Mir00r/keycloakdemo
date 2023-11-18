@@ -15,3 +15,16 @@ jwt:
     converter:
       resource-id: ${KEY_CLOAK_RESOURCE:backend-api}
       principal-attribute: preferred_username
+
+
+keycloak:
+  client-id: backend-api
+  client-secret: WEuxI7SheNzdpqPAUbZiemObQrGt6ZXC
+  scope: openid, profile
+  authorization-grant-type: password
+  authorization-uri: http://localhost:8082/realms/bankrupt/protocol/openid-connect/auth
+  user-info-uri: http://localhost:8082/realms/bankrupt/protocol/openid-connect/userinfo
+  token-uri: http://localhost:8082/realms/bankrupt/protocol/openid-connect/token
+  logout: http://localhost:8082/realms/bankrupt/protocol/openid-connect/logout
+  jwk-set-uri: http://localhost:8082/realms/bankrupt/protocol/openid-connect/certs
+  certs-id: gT5HPcBVYmsv6PFMpcOElEohMB-10b4xze9HPz51pBY

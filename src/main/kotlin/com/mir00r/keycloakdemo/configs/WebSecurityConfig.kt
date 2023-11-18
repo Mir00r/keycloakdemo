@@ -22,6 +22,7 @@ class WebSecurityConfig(private val jwtAuthConverter: JwtAuthConverter) {
         http
             .authorizeHttpRequests { auth ->
                 auth
+                    .requestMatchers(HttpMethod.POST, "/login").permitAll()
                     .requestMatchers(HttpMethod.GET, "/test/hello-1").permitAll()
                     .requestMatchers(HttpMethod.GET, "/test/hello-2").hasRole(ADMIN)
                     .requestMatchers(HttpMethod.GET, "/test/hello-3").hasRole(USER)
